@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="client/myStyles.css">
+    <link rel="stylesheet" type="text/css" href="client/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+       	<div class="container-fluid">
+        	<ul class="nav navbar-nav">
+              <li><a href="/"><b>Home</b></a></li>
+                  <li><a href="/schedule"><b>Schedule</b></a></li>
+                  <li><a href="/addSchedule"><b>Add Schedule Event</b></a></li>
+                  <li><a href="/stock"><b>Stock Page</b></a></li>
+              <li><a href="/admin"><b>Admin</b></a></li>
+                  <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+        	</ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href='/admin'><b>Welcome <span id='loggedinuser'> </span></b></a></li>
+            <script type="text/javascript">
+              window.onload = sendJSONReq2();
+
+            function sendJSONReq2() {
+              var xmlhttp = new XMLHttpRequest();
+              var url = '/getUserName';
+
+              xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var myArr = JSON.parse(this.responseText);
+                    buildtbl(myArr);
+                 }
+              };
+              xmlhttp.open("GET", url, true);
+              xmlhttp.send();
+            }
+
+              // Build Table of Calendar Elements
+              function buildtbl(arr) {
+                out = "";
+                for (var i in arr){
+                  out += arr[i].acc_name;
+              }
+              document.getElementById("loggedinuser").innerHTML = out;
+            }
+           </script>
+          </ul>
+      	</div>
+  		</nav>
+    <br><br>
+    <div class="container">
+          <div id="errorMessage" style="display:none">
+            <h2>THIS LOGIN IS USED BY ANOTHER USER </h2>
+          </div>
+          <div id="deleteUserErrorMessage" style="display:none">
+            <h2>CANNOT DELETE A USER THAT IS LOGGED IN</h2>
+          </div>
+
+          <button type="button" class="btn btn-default btn-sm" onclick="addNewUser()">
+            <span class="glyphicon glyphicon-plus"></span> Add User
+          </button>
+    		<table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Login</th>
+              <th scope="col">New Password</th>
+            </tr>
+          </thead>
+          <tbody id="userTable">
+          </tbody>
+    		</table>
+  		</div>
+      <script type="text/javascript">
+      window.onload = sendJSONReq();
+
+      function sendJSONReq() {
+        var xmlhttp = new XMLHttpRequest();
+        var url = '/getListOfUsers';
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var myArr = JSON.parse(this.responseText);
+              buildTable(myArr);
+           }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+      }
+
+
+        function buildTable(arr) {
+          out = "";
+          var theTable = document.getElementById('userTable');
+          var length=(theTable.rows.length)-1;
+          for (var i in arr){
+            out += "<tr id='user"+ length+"'><td id='id_row"+length+"'>" + arr[i].acc_id + "</td><td id='name_row"+length+"'>" + arr[i].acc_name + "</td><td id='login_row"+length+"'>" + arr[i].acc_login +
+            "</td> <td></td><td><span class='glyphicon glyphicon-pencil' onclick='editUser("+length+")'> </td> <td> <span class='glyphicon glyphicon-trash' onclick='userDelete("+ arr[i].acc_id +")'></td></tr>";
+            length++;
+        }
+        document.getElementById("userTable").innerHTML = out;
+      }
+
+
+      function addNewUser() {
+      var theTable = document.getElementById('userTable');
+      var length=(theTable.rows.length)-1;
+      var row = theTable.insertRow(0);
+      row.outerHTML="<tr id='user"+length+"'><td id='id_row"+length+"'>  "+"</td>"
+    
+      + "<td id='name_row"+length+"'>  <input type='text' id='accname' name='accname'>"+"</td>"
+   
+      + "<td id='login_row"+length+"'>  <input type='text' id='acclogin' name='acclogin'>"+"</td>"
+     
+      + "<td id='password_row"+length+"'>  <input type='text' id='accpassword' name='accpasssword'>"+"</td>"
+
+      + "<td><span class='glyphicon glyphicon-floppy-save' onclick='saveUser()'> </td>"
+      + "<td><span class='glyphicon glyphicon-remove' onclick='cancelUser()'> </td>"
+      +"</tr>";
+    }
+
+function editUser(length) {
+     
+      var row = document.getElementById('user'+length);
+      var userid = document.getElementById('id_row'+length).innerText;
+      var username = document.getElementById('name_row'+length).innerText;
+      var userlogin = document.getElementById('login_row'+length).innerText;
+
+      row.outerHTML=`<tr id='user"+length+"'><td id='id_row"+length+"'> <p id='idnumber'> ${userid} </td>`
+      + "<td id='name_row"+length+"'>  <input type='text' id='accname' name='accname' value='"+username+"'>"+"</td>"
+      + "<td id='login_row"+length+"'>  <input type='text' id='acclogin' name='acclogin' value='"+userlogin+"'>"+"</td>"
+      + "<td id='password_row"+length+"'>  <input type='text' id='accpassword' name='accpasssword'>"+"</td>"
+      + `<td><span class='glyphicon glyphicon-floppy-save' onclick='updateUser("${userlogin}",${length})'> </td>`
+      + "<td><span class='glyphicon glyphicon-refresh' onclick='cancelEdit()'> </td>"
+      +"</tr>";
+    }
+
+function updateUser(originalusername, length) {
+  var xmlhttp = new XMLHttpRequest();
+  var url = "/editUser";
+  var accid = document.getElementById('idnumber').innerText;
+  var accname = document.getElementById('accname').value;
+  var acclogin = document.getElementById('acclogin').value;
+  var accpassword = document.getElementById('accpassword').value;
+
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        window.location.href = '/admin';
+     }
+     else if (this.readyState == 4 && this.status == 422) {
+       document.getElementById('errorMessage').style.display = 'block';
+     }
+     else {
+     }
+  };
+
+  xmlhttp.open("POST", url, true);
+  xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xmlhttp.send('accid='+accid +'&accname='+accname +'&acclogin='+acclogin +'&accpassword='+accpassword+'&originalusername='+originalusername);
+}
+
+function userDelete(userid) {
+            var xmlhttp = new XMLHttpRequest();
+            var url = "/deleteUser";
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  window.location.href = '/admin';
+               }
+               else if (this.readyState == 4 && this.status == 422) {
+                 document.getElementById('deleteUserErrorMessage').style.display = 'block';
+               }
+            };
+
+            xmlhttp.open("POST", url, true);
+            xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlhttp.send('accid='+userid);
+}
+
+function saveUser() {
+        var xmlhttp = new XMLHttpRequest();
+        var url = "/postUser";
+        var accname = document.getElementById('accname').value;
+        var acclogin = document.getElementById('acclogin').value;
+        var accpassword = document.getElementById('accpassword').value;
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              window.location.href = '/admin';
+           }
+           else if (this.readyState == 4 && this.status == 422) {
+             document.getElementById('errorMessage').style.display = 'block';
+           }
+           
+        };
+        xmlhttp.open("POST", url, true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send('accname='+accname +'&acclogin='+acclogin +'&accpassword='+accpassword);
+}
+
+function cancelUser() {
+  var theTable = document.getElementById('userTable');
+  var length=(theTable.rows.length)-1;
+  var row = theTable.deleteRow(0);
+}
+
+function cancelEdit() {
+  window.location.href = '/admin';
+}
+
+     </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="client/myStyles.css">
+  <link rel="stylesheet" type="text/css" href="client/style.css">
+  
+  <title>Log In</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <script type="text/javascript">
+    function submitLogin(page) {
+      page.preventDefault();
+      var xmlhttp = new XMLHttpRequest();
+      var url = "/sendLoginDetails";
+      var username = document.getElementById('user').value;
+      var password = document.getElementById('password').value;
+
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            window.location.href = '/schedule';
+         }
+         else {
+           document.getElementById('errorMessage').style.display = 'block'; 
+         }
+      };
+      xmlhttp.open("POST", url, true);
+      xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xmlhttp.send('user='+username +'&password='+password);
+    }
+
+  </script>
+</head>
+
+<body>
+     <div id = "header" class ="loginSection">
+        <h1>Login Page</h1>
+        <p>Please enter your user name and password. Both are case sensitive.</p>
+    </div>
+
+  <div id="errorMessage" style="display:none">
+    <h2>Error: Could not authenticate username and/or password. </h2>
+  </div>
+
+  <form id="login" onsubmit="return submitLogin(event)">
+      <table style="margin:1em auto;">
+            <tr col>
+              <td>
+                <label for "username" > User:</label>
+              </td>
+              <td>
+                <input class = "login" type="text" id="user" name="username" placeholder="Enter your username" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for "password">Password:</label>
+              </td>
+
+              <td>
+                <input type="text" id = "password" name="password" placeholder="Enter your password"  class = "login" required>
+              </td>
+            </tr>
+            <tr>
+              <td colorspan = "2">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </td>
+         
+            </tr>
+
+          </table>
+        </form>
+  </form>
+</body>
+</html>

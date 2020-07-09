@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Schedule</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+	<script src="map.js"></script>
+
+</head>
+
+<body class="widgets" >
+
+
+  <ul class="nav">
+    <li><a class="active" href="mySchedule.html">My Schedule</a></li>
+    <li><a href="myPlaces.html">My Favorite Places</a></li>
+    <li><a href="myForm.html">Form Input</a></li>
+    <li><a href="myWidget.html">My Widgets</a></li>
+  </ul>
+
+  <p id="dynamic"> <img id="bigPic" src="gophers.PNG" alt="Big Picture"> </p>
+  <button id="start" onclick="init=start()" class="butn" >START </button>
+  <button id= "stop" onclick="init=stop()" class ="butn">STOP </button>
+  <h2>My Spring 2019 Schedule </h2>
+  <table class="_table">
+      
+    <tr>
+       <td class="day">Monday</td>
+       <td class="hover-Text">
+          <p class="time">9:45 - 11:00 AM</p>
+          <p>EE 3025 Statiscal Method in EE and CE <br>Admuson-B75</p>
+          <p class="address" >421 Washington Ave SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="ad.jpg" alt="Admuson building">
+       </td>
+       <td class="hover-Text">
+          <p class="time" >4:00 - 5:15 PM</p>
+          <p>CSCI 4707 Practice of Database Systems KH-320</p>
+          <p class="address" >421 Washington Ave SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="ad.jpg" alt="Admuson building"> 
+       </td>
+    </tr>
+    <tr>
+       <td class="day" >Tuesday</td>
+       <td class="hover-Text" >
+          <p class="time" >9:45 - 11:00 AM</p>
+          <p>CSCI 4061 Operating System KH-3210</p>
+          <p class="address" >200 Union St SE, Minneapolis, MN 55455</p>
+            <img class="noImg" src="keller.jpg" alt="Keller building"> 
+       </td>
+       <td class="hover-Text">
+          <p class="time" >6:30 - 9:00 PM</p>
+          <p>CSCI 4131 Internet Programming KH3-210</p>
+          <p class="address">200 Union St SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="keller.jpg" alt="Keller building"> 
+       </td>
+    </tr>
+    <tr>
+       <td class="day" >Wednesday</td>
+       <td class="hover-Text" >
+          <p class="time" >11:15 AM - 12:05 PM </p>
+          <p>EE 3025 Statiscal Method in EE and CE <br>Admuson-B75</p>
+          <p class="address">421 Washington Ave SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="ad.jpg" alt="Admuson building"> 
+       </td>
+       <td class="hover-Text" >
+          <p class="time" >4:00 - 5:15 PM</p>
+          <p>CSCI 4707 Practice of Datbase System <br>Admuson-B75</p>
+          <p class="address" >421 Washington Ave SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="ad.jpg" alt="Admuson building"> 
+
+       </td>
+    </tr>
+    <tr>
+       <td class="day" >Thursday</td>
+       <td class="hover-Text">
+          <p class="time" >9:45 - 11:00 AM</p>
+          <p>CSCI 4061 Operating System KH-3210</p>
+          <p class="address" >200 Union St SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="keller.jpg" alt="Keller building"> 
+       </td>
+       <td class="hover-Text">
+          <p class="time" >3:00 - 4:00 PM</p>
+          <p>Workout: <br>Rec Center</p>
+          <p class="address" >123 SE Harvard St, Minneapolis, MN 55455</p>
+          <img class="noImg" src="rec.jpg" alt="rec center"> 
+       </td>
+    </tr>
+    <tr>
+       <td class="day" >Friday</td>
+       <td class="hover-Text">
+          <p class="time" >9:45 - 11:00 AM</p>
+          <p>EE 3025 Statiscal Method in EE and CE <br>Admuson-B75</p>
+          <p class="address" >421 Washington Ave SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="ad.jpg" alt="Admuson building"> 
+       </td>
+       <td class="hover-Text">
+          <p class="time">12:20 - 2:15</p>
+          <p>Self-study @ ME Building</p>
+          <p class="address" >111 Church St SE, Minneapolis, MN 55455</p>
+          <img class="noImg" src="me.jpg" alt="ME Building"> 
+       </td>
+    </tr>
+    <tr>
+       <td class="day">Sat</td>
+       <td class="hover-Text long" colspan="2">
+        <p> There is nothing scheduled for the day</p>
+        <img class="noImg" src="free.jpg" alt="free time"> 
+       </td>
+       
+       
+    </tr>
+    <tr>
+       <td class="day" >Sun</td>
+       <td class="hover-Text long" colspan="2">
+        <p>  There is nothing scheduled for the day</p>
+        <img class="noImg" src="free.jpg" alt="free time"> 
+       </td>
+    </tr>
+  </table>
+  <div id="map"></div>
+ 
+		<table>
+		<tr>
+			<td>
+				<select id="place"  onchange='checkOthers(this.value);'>
+					   	<option value="restaurant">restaurant</option>  
+					    <option value="hospital">hospital</option>
+					    <option value="parking">parking</option>
+					    <option value="supermarket">supermarket</option>
+					    <option value="others">others</option>
+					</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			
+			<input type="text" id="other_place" placeholder="Enter other places" disabled>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+				in <input type="text" id="radius" name="radius" /> radius <br> <br>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="sbut" onclick="searchPlace()">search </button>
+			</td>
+		</tr>
+		<tr>
+
+		<td>
+			<input id="origin" class="controls" type="text"
+            placeholder="Start Location">	
+		</td>
+		</tr>
+        
+        <tr>
+        	<td>
+        	<input id="destination" class="controls" type="text"
+            placeholder="End Location">		
+        	</td>
+        </tr>
+
+        <tr>
+        	<td>
+        	 <div id="mode-selector" class="controls right">
+          <input type="radio" name="type" id="walking-mode" checked="checked">
+          <label for="walking-mode">Walking</label>
+
+           <input type="radio" name="type" id="driving-mode">
+          <label for="driving-mode">Driving</label>
+
+          <input type="radio" name="type" id="transit-mode">
+          <label for="transit-mode">Transit</label>
+		  
+		  <input type="radio" name="type" id="bike-mode"> 
+		  <label for="bike-mode">Bicycling</label>
+        </div>	
+        	</td>
+        </tr>
+        <tr>
+        	<td>
+        		<input type="button" name="GO" id="go_btn" value="GO">
+        	</td>
+        </tr>
+       
+
+        </table>
+
+	<div id="left-panel"></div>
+    
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uUMInKBROrxki9rQIbkZV7LcSSmBsOQ&libraries=places&callback=initMap"
+        async defer></script>
+</body>
+</html>

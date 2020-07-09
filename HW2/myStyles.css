@@ -1,0 +1,220 @@
+
+	.widgets{
+
+	}
+	.subscribe{
+		background-color: #858585;
+		color: #FFF;
+	}
+
+	body{
+	background-color: grey ;
+	background-position: bottom left;
+	background-attachment: fixed;
+
+}
+
+.twiiterContainer{
+	width: 50%;
+	height: auto;
+}
+
+a:link{
+	color: black;
+	background-color: transparent;
+	text-decoration: none
+}
+
+a:visited{
+	color:red;
+	background-color : transparent;
+	text-decoration: none;
+}
+
+a:hover{
+	color: red;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:active{
+	color: red;
+	background-color: transparent;
+	text-decoration: none;
+
+}
+
+
+table{
+	background: white;
+	margin-top: 200px
+	border-collapse: collapse;
+}
+table,th,td{
+	border: 1px solid black;
+	text-align:center;
+}
+
+
+nav{
+	display: block;
+}
+
+h2{
+	color:white;
+	text-align: left;
+
+}
+
+h3{
+	color:white;
+	text-align: center;
+}
+
+p{
+	font-family: "Time New Roman", Time, serif;
+}
+
+p.solid{
+	border-style: solid;
+	background-color: blue;
+	border-width: 2px;
+	border-right : 350px solid black;
+}
+
+p.normal{
+	font-style: normal;
+}
+
+p.thick{
+	font-weight: bold;
+}
+
+p.italic{
+	font-style:italic;
+}
+p.oblique{
+	font-style: oblique;
+}
+
+ol.div{
+	width: 300px;
+	height: 55px;
+	border: 25px solid black;
+	padding: 25px;
+	margin: 0px;
+}
+
+p.indent{
+	padding-left: 1.8em;
+}
+
+#container {
+width: 500px;
+background: #ffffff;
+padding: 20px;
+margin: 80px auto;
+border-radius: 5px;
+height: 150px;
+border: 2px solid gray;
+}
+
+#header {
+text-align: left;
+background-color: lightgreen;
+border-radius: 5px;
+margin: -39px -20px 10px -20px;
+}
+
+#content {
+margin-left: 10px;
+margin-top: 10px;
+}
+
+#register label{
+margin-right:5px;
+}
+#register input {
+padding: 5px 14px;
+border: 1px solid #d5d9da;
+box-shadow: 0 0 9px #0E34F5 inset;
+width: 272px;
+font-size: 1em;
+height: 25px;
+}
+
+#register .short{
+font-weight:bold;
+color:#FF0000;
+font-size:larger;
+}
+#register .weak{
+font-weight:bold;
+color:orange;
+font-size:larger;
+}
+#register .good{
+font-weight:bold;
+color:#2D98F3;
+font-size:larger;
+}
+#register .strong{
+font-weight:bold;
+color: limegreen;
+font-size:larger;
+}
+
+
+
+.noImg{
+	display: none;
+}
+
+.hover-Text:hover ~ .noImg{
+	display: block;
+	height:100px;
+	width: 100px;
+}
+
+
+.column_left{
+	float:left;
+	width:30%;
+
+}
+
+.column_right{
+
+	float:right;
+	width:60%;
+}
+
+
+.col_left{
+	float:left;
+	width: 20%;
+}
+
+.col_right{
+	float:right;
+	width: 80%;
+}
+.pop_check{
+	width: 30%;
+	background-color:#ffffff;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	text-align: center;
+}
+
+.container{
+	display: none;
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 80%;
+	height: 80%;
+	position: left;
+	top: 0;
+	left: 0;
+	
+}

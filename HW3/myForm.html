@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Favorite Places</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+	<script src="map.js"></script>
+</head>
+
+<body>
+
+	<ul class="nav">
+	  <li><a class="active" href="mySchedule.html">My Schedule</a></li>
+	  <li><a href="myPlaces.html">My Favorite Places</a></li>
+	  <li><a href="myForm.html">Form Input</a></li>
+	  <li><a href="myWidget.html">My Widgets</a></li>
+	</ul>
+
+		<form id="form" name="myform"  action="mySuccess.html" onsubmit="return form_check()">  
+			<table>
+			<tr>
+				<td>Day of the Week:</td>
+				<td>
+					<select name="day">
+				    <option value="Mon">Monday</option>
+				    <option value="Tue">Tueday</option>
+				    <option value="Wed">Wednesday</option>
+				    <option value="Thur">Thursday</option>
+				    <option value="Fri">Friday</option>
+				    <option value="Weekend">Saturday-Sunday</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td >Start Time:</td>
+				<td>
+					<input type="time"  id="strt" name="starting" required>
+				</td>
+			</tr>
+
+			<tr>
+				<td >End Time:</td>
+				<td>
+					<input type="time"  id="end" name="ending" required>
+				</td>
+			</tr>
+
+			<tr>
+				<td >Event Name:</td>
+				<td>
+					<input type="text" id="event" name="event" /><br/> 
+				</td>
+			</tr>
+
+			<tr>
+				<td >Location:</td>
+				<td>
+					<input type="text" id="location" name="location" /><br/> 
+				</td>
+			</tr>
+
+			<tr>
+				<td >Enter URL for the picture:</td>
+				<td>
+					<input type="url" name="url" pattern="https?://.+" required><br/> 
+				</td>
+			</tr>
+
+			<tr>
+				<td ></td>
+				<td>
+					<input type="submit" name="sumbit" /><br/> 
+				</td>
+			</tr>
+
+	  			
+			</table>
+		</form>
+
+		
+	</div>
+
+
+
+	<div id="map"></div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uUMInKBROrxki9rQIbkZV7LcSSmBsOQ&libraries=places"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uUMInKBROrxki9rQIbkZV7LcSSmBsOQ&callback=initMap"
+    async defer></script>
+</body>
+</html> 

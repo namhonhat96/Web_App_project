@@ -1,0 +1,86 @@
+
+	.widgets{
+
+	}
+	.subscribe{
+		background-color: #858585;
+		color: #FFF;
+	}
+
+	body{
+	background-color: #FFFACD ;
+	background-position: bottom left;
+	background-attachment: fixed;
+
+}
+
+a:link{
+	color: blue;
+	background-color: transparent;
+	text-decoration: none
+}
+
+a:visited{
+	color:blue;
+	background-color : transparent;
+	text-decoration: none;
+}
+
+a:hover{
+	color: red;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:active{
+	color: yellow;
+	background-color: transparent;
+	text-decoration: none;
+
+}
+
+body{
+	background-color: #FFFACD ;
+	background-position: bottom left;
+	background-attachment: fixed;
+
+}
+
+table{
+	border-collapse: collapse;
+}
+table,th,td{
+	border: 1px solid black;
+	text-align:center;
+}
+
+nav{
+	display: block;
+}
+
+h2{
+	text-align: center;
+}
+
+ol{
+	text-align: center;
+}
+
+p.solid{
+	border-style: solid;
+	background-color: lightgrey;
+	border-width: 1px;
+	border-right : 5px solid red;
+}
+
+p.div1{
+	width: 70px;
+	height : 20px;
+	border: 1px dashed red;
+}
+
+p.div2{
+	width: 90px;
+	height: 20px;
+	border: 1px dashed red;
+}

@@ -1,0 +1,329 @@
+/*background and header setup*/
+body{
+  font-family: sans-serif;
+
+}
+
+h2{
+	color:white;
+	font-size: 200%;
+}
+/*Big picture on the schedule page*/
+#dynamic_pic1{
+  position:absolute;
+  top: 250px;
+  left: 1100px;
+  width: 30px;
+  height: 50px;
+
+}
+#dynamic img {
+  width: 400px;
+  height: 300px;
+   top: 250px;
+  left: 1100px;
+  float:right;
+}
+
+#start{
+  position:absolute;
+  top: 600px;
+  left: 1225px;
+}
+
+#stop{
+  position:absolute;
+  top: 600px;
+  left: 1350px;
+}
+
+/*Navigation bar set up*/
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(244, 89, 65);
+  border-radius: 10px;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+/* unvisited link */
+ a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+
+
+/*set up the table for schedule*/
+._table, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+      text-align: center;
+}
+._table {
+	width:60%;
+	height: 80%;
+
+}
+
+._table>tr>td {
+	width:30.5%;
+	height:80px;
+
+}
+
+.day {
+	width:5%;
+  font-weight: bold;
+}
+
+.time{
+  font-style: italic;
+
+}
+
+}
+.long{
+	text-align: center;
+	padding-bottom: 35px;
+	padding-top: 35px;
+}
+
+
+
+a.except:link {
+  color: green;
+}
+
+a.except:visited {
+  color: green;
+}
+
+.noImg{
+  display:none;
+}
+
+.hover-Text:hover >.noImg{
+  display: block;
+  height:100px;
+  width: 100px;
+  margin: auto;
+
+}
+
+
+.places{
+  width:400px;
+
+}
+.places ol{
+  color:white;
+  padding: 15px 20px 35px 20px;
+
+}
+
+.formt {
+  width: 33%;
+  height: 80%;
+  background-color: white;
+  border-collapse: collapse;
+
+  position:absolute;
+  top: 100px;
+  left: 500px;
+}
+
+.formt tr td {
+  text-align: center;
+}
+
+/*widget setup*/
+iframe
+{
+   width:500px;
+   height:350px;
+}
+
+.widgets div{
+  width:400px;
+
+}
+
+ol{
+  background-color:black;
+  color:white;
+  padding: 15px 20px 35px 20px;
+
+}
+
+.wtable  {
+  width: 33%;
+  height: 80%;
+  border-style:hidden;
+
+  position:absolute;
+  top: 100px;
+  left: 600px;
+}
+
+div.ttime {
+  background-color: lightblue;
+  width: 400px;
+  height: 500px;
+  overflow: auto;
+}
+
+div.pas_con{
+  background-color: purple;
+  width:400px;
+  height:200px;
+  border-radius: 25%;
+
+  margin-top: 20px;
+}
+
+div.pas_con2{
+  background-color: purple;
+  padding: 100px 0px 25px 0px;
+  background-color: white;
+  border-radius: 25%;
+}
+
+
+
+#result {
+font-weight:bold;
+font-size:larger;
+}
+
+#bar {
+  border-width: : thick;
+  border-style: solid;
+  float:left;
+
+}
+
+#map{
+        height: 50%;
+        width: 65%;
+        background-color: none;
+}
+
+ html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+.tform {
+  width: 33%;
+  height: 25%;
+  background-color: white;
+  border-collapse: collapse;
+  position:absolute;
+  top: 825px;
+  left: 1000px;
+  margin-top: 135px;
+  margin-left: 300px;
+}
+
+
+.col_right{
+
+  float:right;
+  width: 50%;
+}
+
+.align_button{
+  float:center;
+  text-align: center;
+  margin-bottom: 500px;
+}
+
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+      #origin-input,
+      #destination-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 200px;
+      }
+      #origin-input:focus,
+      #destination-input:focus {
+        border-color: #4d90fe;
+      }
+      #mode-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        margin-left: 12px;
+        padding: 5px 11px 0px 11px;
+      }
+      #mode-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+    
+    #left-panel {
+        height: 70%;
+        float: left;
+        width: 300px;
+        overflow: auto;
+      }
+      
+
+  .butn{
+    float:right;
+    margin-left: 400px;
+    margin-bottom: 1000px;
+       top: 250px;
+  left: 1100px;
+
+  }

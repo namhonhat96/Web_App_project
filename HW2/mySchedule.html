@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset = "utf-8">
+<title>  mySchedule </title>
+
+<link rel="stylesheet" type="text/css" href="myStyles.css">
+
+<style>
+
+		p img {
+			display: none;
+			
+		}
+		p:hover img {
+			display: block;
+			height :30px;
+			width : 30px;
+		}
+	</style>
+	<script>
+		function showBigPic(num) {
+			bigPic = document.getElementById("big");
+			if (parseInt(num) == 1) {
+				bigPic.src = "keller.JPG";
+				bigPic.alt = "Keller"
+			}
+			else if(parseInt(num) == 2){
+		
+				bigPic.src = "coffman.JPG";
+				bigPic.alt = "Coffman";
+			
+			}else if(parseInt(num) == 3){
+		
+				bigPic.src = "walter.JPG";
+				bigPic.alt = "Walter";
+			}else if(parseInt(num) == 4){
+				bigPic.src ="lab.JPG";
+				bigPic.alt = "Lab";
+			}else if(parseInt(num) == 5){
+				bigPic.src = "rec.JPG";
+				bigPic.alt = "Rec";	
+			}
+		
+		}
+		
+	</script>
+
+</head>
+
+
+<body>
+
+<nav>
+<p class = "solid">
+	<a href = "mySchedule.html" target = "_self">My Schedule</a>
+	<a href = "myPlaces.html" target="_self">My Favorite Places</a>
+	<a href="formInput.html" target="_self">Form Input</a>
+	<a href="myWidgets.html" target="_self">My Widgets</a>
+</p>
+
+</nav>
+
+<h2> My Spring 19 Schedule</h2>
+
+<div class ="column_left">
+<table>
+	
+	<tbody>
+		<tr>
+			<td colspan="3">
+				<p class = "thick">Monday</p>
+			</td>
+			
+			<td>
+				<p class = "italic">10:00 - 10:45 AM</p>
+				<p>CSCI 3123 - KH 320 </p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+			</td>
+			<td>
+				<p class = "italic">1:00 - 2:00 PM</p>
+				<p>Meeting</p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(4)"><a href="">Shepherd Lab 587</a></p>
+				
+				  <img class = "noImg" src="lab.JPG" alt ="Lab" >
+			
+			</td>
+			<td>
+				<p>3:00 - 4:00 PM</p>
+				<p>Bowling</p>
+				
+					<p class = "hover-Text" onmouseover="showBigPic(2)"><a href="">Coffman</a></p>
+				
+					<img class = "noImg" src="coffman.JPG" alt ="Coffman" >
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><p class = "thick">Tuesday</p></td>
+			<td>
+				<p class ="italic">8:00 - 8:45 AM</p>
+				<p> CSCI 2034 - KH 322</p>
+				
+				 <p  class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				 
+				
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+				
+			</td>
+			<td>
+				<p class = "italic">11:00 - 11:45 AM</p>
+				<p>CSCI 4131 - KH 321</p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				 	<img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+				
+			</td>
+			<td></td>
+
+		</tr>
+		<tr>
+			<td colspan="3"><p class = "thick">Wednesday</p></td>
+			<td>
+				<p class = "italic">10:00 - 10:45 AM</p>
+				<p>CSCI 3123 - KH 320</p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				 
+				
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+				
+			</td>
+			<td>
+				<p class = "italic">2:00 - 3:00 PM</p>
+				<p> Group Meeting  </p>
+			
+				 <p class = "hover-Text" onmouseover="showBigPic(3)"><a href="">Walter</a></p>
+				
+				 <img class = "noImg" src="walter.JPG" alt ="Walter" >
+				
+			</td>
+
+			<td>
+				<p class = "italic">4:00 - 5:00 PM</p>
+				<p>Office Hours - KH 410 </p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				 	<img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+				
+			</td>
+
+		</tr>
+
+		<tr>
+			<td colspan="3"><p class = "thick">Thursday</p></td>
+			<td>
+				<p class ="italic">8:00 - 8:45 AM</p>
+				<p> CSCI 2034 - KH 322 	</p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+			
+				
+			</td>
+			<td>
+				<p class = "italic">11:00 - 11:45 AM</p>
+				<p>CSCI 4131 - KH 321 </p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td colspan="3"><p class = "thick">Friday</p></td>
+			<td>
+				<p class ="italic">10:00 - 10:45 AM</p>
+				<p> CSCI 3123 - KH 320 </p>
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(1)"><a href="">Keller</a></p>	
+				  <img class = "noImg" src="keller.JPG" alt ="Lab" >
+				
+			</td>
+			<td>
+				<p class = "italic">3:00 - 4:00 AM</p>
+				<p >Swimming </p>
+				
+				
+				 <p class = "hover-Text" onmouseover="showBigPic(5)"><a href="">Rec Center</a></p>	
+			
+				  <img class = "noImg" src="rec.JPG" alt ="Rec Center" >
+				
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<p class = "thick">Saturday</p>
+			</td>
+			<td colspan="3">There is nothing scheduled for the day</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<p class = "thick">Sunday</p>
+			</td>
+			<td colspan="3">There is nothing scheduled for the day</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<div class = "column_right">
+<img id ="big" src="gophers.PNG" alt = "Big Picture" width="300" height = "300" >
+
+</div>
+
+
+</body>
+
+</html>

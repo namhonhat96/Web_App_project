@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="myStyles.css">
+<meta charset = "utf-8">
+<title> Form Input </title>
+
+</head>
+
+
+
+<body>
+<nav>
+<p class = "solid">
+	<a href = "mySchedule.html" target = "_self">My Schedule</a>
+	<a href = "myPlaces.html" target="_self">My Favorite Places</a>
+	<a href="formInput.html" target="_self">Form Input</a>
+	<a href="myWidgets.html" target="_self">My Widgets</a>
+</p>
+
+</nav>
+
+<form action="success.html" onsubmit="return mySubmit()" >
+<table>
+	<tbody>
+	<tr>
+		<td>Day of the week</td>
+		<td>
+		
+	<select name ="Days">
+		<option value="mon">Monday</option>
+		<option value="tue">Tuesday</option>
+		<option value="wed">Wednesday</option>
+		<option value = "thur">Thursday</option>
+		<option value ="fri">Friday</option>
+	</select>
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td>Start Time</td>
+		<td>
+			
+	<input type="time" id ="start" name="Start" >
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td>End Time</td>
+		<td>
+			
+	<input type="time" id = "end" name="End">
+			
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Event Name</td>
+		<td>
+			
+	<input type="text" name="Event" placeholder="Enter Event Name" pattern="[A-Za-z0-9]+" title="Event Name must be alphanumberic.">
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td>Location</td>
+		<td>
+			
+	<input type="text" name="Location" placeholder ="Enter Location" pattern="[A-Za-z0-9]+" title="Location name must be alphanumeric">
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td>Enter URL for the picture</td>
+		<td>
+		
+	<input type="text" name="URL" placeholder="Enter URL">
+			
+		</td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td>
+			
+	<input type="submit" value = "Submit">
+			
+		</td>
+	</tr>
+	</tbody>
+	
+</table>
+</form>
+
+
+
+</body>
+</html>
+

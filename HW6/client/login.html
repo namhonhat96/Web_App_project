@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+  <title>Log in</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="client/myStyles.css">
+  <link rel="stylesheet" type="text/css" href="client/style.css">
+
+</head>
+
+<body id="loginBody">
+    <div id = "header" class ="loginSection">
+        <h1>Login Page</h1>
+        <p>Please enter your user name and password. Both are case sensitive.</p>
+    </div>
+    
+    <div id ="errorMessage" style="display: none">
+      <p>Invalid Message</p>
+    </div>  
+
+      <div id = "form_section">
+        <form id = "loginForm" method="POST" action="/sendLoginDetails">
+          <table style="margin:1em auto;">
+            <tr col>
+              <td>
+                <label for "username" > User:</label>
+              </td>
+              <td>
+                <input class = "login" type="text" id="username" name="username" placeholder="Enter your username" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for "password">Password:</label>
+              </td>
+
+              <td>
+                <input type="text" id = "password" name="password" placeholder="Enter your password"  class = "login" required>
+              </td>
+            </tr>
+            <tr>
+              <td colorspan = "2">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </td>
+         
+            </tr>
+
+          </table>
+        </form>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
